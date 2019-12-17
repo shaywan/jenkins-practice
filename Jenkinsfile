@@ -1,10 +1,14 @@
 pipeline {
     agent { docker { image 'node:10' } }
+    environment {
+        SECRET = 'knock knock...'   
+    }
     stages {
         stage('build') {
             steps {
                 sh 'npm --version'
                 sh 'echo multi step'
+                echo "Secret: ${SECRET}"
             }
         }
     }
