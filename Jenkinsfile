@@ -9,6 +9,7 @@ pipeline {
                 sh 'npm --version'
                 sh 'echo multi step'
                 echo "Secret: ${SECRET}"
+                sh 'printenv'
             }
         }
     }
