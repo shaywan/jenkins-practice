@@ -6,10 +6,17 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh 'npm --version'
-                sh 'echo multi step'
+                echo 'BUILD'
+                echo '####################'
                 echo "Secret: ${SECRET}"
                 sh 'printenv'
+            }
+        }
+        stage('test') {
+            steps {
+                echo 'TEST'
+                echo '####################'
+                sh './run-tests'   
             }
         }
     }
