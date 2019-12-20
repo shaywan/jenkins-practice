@@ -1,22 +1,28 @@
 pipeline {
     agent { docker { image 'node:10' } }
     environment {
-        SECRET = 'knock knock...'   
+        SECRET = 'knock knock...'
     }
     stages {
         stage('build') {
             steps {
-                echo 'BUILD'
-                echo '####################'
-                echo "Secret: ${SECRET}"
+                echo 'Build'
+                echo "Environment variable: ${SECRET}"
                 sh 'printenv'
             }
         }
         stage('test') {
             steps {
-                echo 'TEST'
-                echo '####################'
-                sh './run-tests.sh'   
+                echo 'Test'
+                echo 'Run a script'
+                sh './run-tests.sh'
+            }
+        }
+        stage('deploy') {
+            steps {
+                echo 'Deploy'
+                echo 'User input'
+                input 'Do you even deploy tho?'
             }
         }
     }
