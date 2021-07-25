@@ -34,7 +34,7 @@ pipeline {
       steps {
         nodejs('16') {
           sh 'npm install'
-          sh 'node index.js ${OUTPUT_FILENAME}'
+          sh "node index.js ${OUTPUT_FILENAME}"
         }
       }
     }
