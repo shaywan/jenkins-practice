@@ -23,6 +23,8 @@ pipeline {
       script {
         def slackConfig = readJSON file: 'mock-slack-response.json'
         println slackConfig.attachments
+        println slackConfig.attachments.length
+        println slackConfig.attachments.size()
 
         slackSend(channel: 'testing', message: "Pipeline message")
       }
