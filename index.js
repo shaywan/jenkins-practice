@@ -1,6 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 
+console.log('environment test:', process.env.ENVIRONMENT);
+
 const slackConfig = {
   "text": "Slack config",
   "attachments": [
