@@ -8,6 +8,18 @@ properties([
 pipeline {
   agent any
 
+  parameters {
+    choice(
+      name: 'ENVIRONMENT',
+      choices: [
+          'test',
+          'live'
+      ],
+      description: 'The environment to check',
+      defaultValue: 'live'
+    )
+  }
+
   stages {
     stage('Setup') {
       steps {
