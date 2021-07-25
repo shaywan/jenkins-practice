@@ -24,7 +24,7 @@ pipeline {
         def slackConfig = readJSON file: 'mock-slack-response.json'
 
         if (slackConfig.attachments.size() > 0) {
-          slackSend(channel: 'testing', message: slacConfig.text, attachments: slackConfig.attachments)
+          slackSend(channel: 'testing', message: slackConfig.text, attachments: slackConfig.attachments)
         }
       }
     }
