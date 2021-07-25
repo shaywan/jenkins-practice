@@ -12,8 +12,8 @@ pipeline {
     choice(
       name: 'ENVIRONMENT',
       choices: [
-          'test',
-          'live'
+          'live',
+          'test'
       ],
       description: 'The environment to check',
       defaultValue: 'live'
