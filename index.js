@@ -24,4 +24,4 @@ const slackConfig = {
   ]
 }
 
-fs.writeFileSync(path.join(__dirname), 'slack-config.json', JSON.stringify(slackConfig));
+fs.writeFileSync(path.join(__dirname, 'slack-config.json') , JSON.stringify(slackConfig));
