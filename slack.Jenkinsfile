@@ -12,9 +12,7 @@ pipeline {
     stage('Setup') {
       steps {
         nodejs('16') {
-          script {
-            npm install
-          }
+          sh 'npm install'
         }
       }
     }
