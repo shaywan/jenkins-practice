@@ -1,11 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 
-console.log('environment test:', process.env.ENVIRONMENT);
-
 const args = process.argv.slice(2);
 const [slackConfigFilename] = args;
-console.log('slackConfigFilename:', slackConfigFilename)
 
 const slackConfig = {
   "text": "Slack config",
@@ -29,7 +26,5 @@ const slackConfig = {
     }
   ]
 }
-
-throw new Error('error');
 
 fs.writeFileSync(path.join(__dirname, slackConfigFilename) , JSON.stringify(slackConfig));
