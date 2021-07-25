@@ -1,8 +1,27 @@
 const fs = require('fs');
 const path = require('path');
 
-const message = {
-  message: 'hello world'
+const slackConfig = {
+  "text": "Slack config",
+  "attachments": [
+    {
+      "title": "Formula 1",
+      "fallback": "Priority order for Formula 1",
+      "fields": [
+        {
+          "title": "Currently promoted",
+          "value": "Australian Grand Prix",
+          "short": true
+        },
+        {
+          "title": "What's on tomorrow",
+          "value": "Hungarian Grand Prix",
+          "short": true
+        }
+      ],
+      "color": "#1DE9B6"
+    }
+  ]
 }
 
-fs.writeFileSync(path.join(__dirname), 'message.json', JSON.stringify(message));
+fs.writeFileSync(path.join(__dirname), 'slack-config.json', JSON.stringify(slackConfig));

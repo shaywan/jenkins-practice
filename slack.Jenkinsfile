@@ -9,10 +9,17 @@ pipeline {
   agent any
 
   stages {
-    stage('Setup') {
+    stage('Build') {
+      steps {
+        deleteDir()
+      }
+    }
+
+    stage('Build') {
       steps {
         nodejs('16') {
           sh 'npm install'
+          sh 'node index.js'
         }
       }
     }
@@ -21,7 +28,7 @@ pipeline {
   post {
     success {
       script {
-        def slackConfig = readJSON file: 'mock-slack-response.json'
+        def slackConfig = readJSON file: 'slack-config.json'
 
         if (slackConfig.attachments.size() > 0) {
           slackSend(channel: 'general', message: slackConfig.text, attachments: slackConfig.attachments)
