@@ -21,7 +21,7 @@ pipeline {
   post {
     success {
       script {
-        def slackConfig = readJSON file: 'mock-slack-response.json'
+        def slackConfig = readJSON file: 'mock-slack-empty-response.json'
 
         if (slackConfig.attachments.size() > 0) {
           slackSend(channel: 'testing', message: slackConfig.text, attachments: slackConfig.attachments)
