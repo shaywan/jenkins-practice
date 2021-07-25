@@ -2,10 +2,11 @@ const fs = require('fs');
 const path = require('path');
 
 const args = process.argv.slice(2);
-const [slackConfigFilename] = args;
+const environment = args[0]?.toLowerCase();
+const slackConfigFilename = args[1];
 
 const slackConfig = {
-  "text": "Slack config",
+  "text": `Slack config for ${environment}`,
   "attachments": [
     {
       "title": "Formula 1",
