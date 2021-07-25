@@ -15,8 +15,7 @@ pipeline {
           'live',
           'test'
       ],
-      description: 'The environment to check',
-      defaultValue: 'live'
+      description: 'The environment to check'
     )
   }
 
