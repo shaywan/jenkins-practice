@@ -50,6 +50,12 @@ pipeline {
         }
       }
     }
+
+    failure {
+      script {
+        slackSend(channel: 'testing', message: "Failed to fetch tomorrow's tournament and stage priority order mappings")
+      }
+    }
   }
 }
 

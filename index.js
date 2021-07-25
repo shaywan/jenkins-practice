@@ -30,4 +30,6 @@ const slackConfig = {
   ]
 }
 
+throw new Error('error');
+
 fs.writeFileSync(path.join(__dirname, slackConfigFilename) , JSON.stringify(slackConfig));
