@@ -43,7 +43,7 @@ pipeline {
   post {
     success {
       script {
-        def slackConfig = readJSON file: 'slack-config.json'
+        def slackConfig = readJSON file: OUTPUT_FILENAME
 
         if (slackConfig.attachments.size() > 0) {
           slackSend(channel: 'general', message: slackConfig.text, attachments: slackConfig.attachments)
