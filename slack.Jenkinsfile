@@ -1,5 +1,7 @@
 #!/usr/bin/env groovy
 
+def OUTPUT_FILENAME = 'slack-config.json'
+
 properties([
   buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '', numToKeepStr: '10')),
   [$class: 'GithubProjectProperty', displayName: '', projectUrlStr: ''],
@@ -24,6 +26,7 @@ pipeline {
       steps {
         deleteDir()
         git branch: 'main', url: 'git@github.com:shaywan/jenkins-practice.git'
+
       }
     }
 
@@ -31,7 +34,7 @@ pipeline {
       steps {
         nodejs('16') {
           sh 'npm install'
-          sh 'node index.js'
+          sh 'node index.js ${OUTPUT_FILENAME}'
         }
       }
     }
