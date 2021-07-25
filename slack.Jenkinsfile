@@ -11,8 +11,10 @@ pipeline {
   stages {
     stage('Setup') {
       steps {
-        script {
-          println("Perform some task")
+        nodejs('16') {
+          script {
+            npm install
+          }
         }
       }
     }
