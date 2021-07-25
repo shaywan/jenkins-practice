@@ -1,0 +1,22 @@
+{
+  "text": "Tournament and stage priority order",
+  "attachments": [
+    {
+      "title": "Formula 1",
+      "fallback": "Priority order for Formula 1",
+      "fields": [
+        {
+          "title": "Currently promoted",
+          "value": "Australian Grand Prix",
+          "short": true
+        },
+        {
+          "title": "What's on tomorrow",
+          "value": "Hungarian Grand Prix",
+          "short": true
+        }
+      ],
+      "color": "#1DE9B6"
+    }
+  ]
+}
