@@ -12,6 +12,7 @@ pipeline {
     stage('Setup') {
       steps {
         deleteDir()
+        git branch: 'main', url: 'git@github.com:shaywan/jenkins-practice.git'
       }
     }
 
